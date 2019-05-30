@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--
+
+    Copyright 2019 XEBIALABS
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+-->
+<synthetic xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd" xmlns="http://www.xebialabs.com/deployit/synthetic">
+
+    <!-- Nginx Configuration -->
+    <type type="nginx.Server" extends="udm.BaseContainer" root="INFRASTRUCTURE">
+        <property name="url" label="Nginx API URL" required="true" description="Nginx API URL."/>
+    </type>
+
+    <type-modification type="udm.BaseContainer">
+        <property name="serverName" required="false" category="Nginx config" description="Server as configured in the nginx configuration."/>
+        <property name="upstreamName" required="false" category="Nginx config" description="Selects a group to work with."/>
+        <property name="apiVersion" required="false" category="Nginx config" default="4" description="Nginx API Version - default is 4"/>
+        <property name="nginxServer" required="false" kind="ci" referenced-type="nginx.Server" category="Nginx config" description="Nginx Server this CI is part of."/>
+    </type-modification>
+
+</synthetic>
