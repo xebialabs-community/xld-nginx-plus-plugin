@@ -23,7 +23,7 @@ encoded_body = json.dumps({"down": "true"})
 print "nginx_url - %s, api_version - %s, upstream_name - %s " % (nginx_url, api_version, upstream_name)
 url = "%s/api/%s/http/upstreams/%s/servers/%s" % (nginx_url, api_version, upstream_name, nginx.get_server_id(upstream_name, server_name, api_version))
 http = urllib3.PoolManager()
-response = http.request('PATCH', url, 
+response = http.request('PATCH', url,
                         headers={'Content-Type': 'application/json'},
                         body=encoded_body)
 if not response.status == 200:

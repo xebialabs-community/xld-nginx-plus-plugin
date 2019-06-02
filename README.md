@@ -4,11 +4,7 @@
 [![License: MIT][xld-nginx-plus-plugin-license-image]][xld-nginx-plus-plugin-license-url]
 ![Github All Releases][xld-nginx-plus-plugin-downloads-image]
 
-[xld-nginx-plus-plugin-travis-image]: https://travis-ci.org/xebialabs-community/xld-nginx-plus-plugin.svg?branch=master
-[xld-nginx-plus-plugin-travis-url]: https://travis-ci.org/xebialabs-community/xld-nginx-plus-plugin
-[xld-nginx-plus-plugin-license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
-[xld-nginx-plus-plugin-license-url]: https://opensource.org/licenses/MIT
-[xld-nginx-plus-plugin-downloads-image]: https://img.shields.io/github/downloads/xebialabs-community/xld-nginx-plus-plugin/total.svg
+
 
 ## Preface
 
@@ -32,4 +28,12 @@ Note:  XLD or XLR version should not be lower than lowest supported version.  Se
 ## Features/Usage/Types/Tasks
 
 ## References
+
+
+
+[xld-nginx-plus-plugin-travis-image]: https://travis-ci.org/xebialabs-community/xld-nginx-plus-plugin.svg?branch=master
+[xld-nginx-plus-plugin-travis-url]: https://travis-ci.org/xebialabs-community/xld-nginx-plus-plugin
+[xld-nginx-plus-plugin-license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
+[xld-nginx-plus-plugin-license-url]: https://opensource.org/licenses/MIT
+[xld-nginx-plus-plugin-downloads-image]: https://img.shields.io/github/downloads/xebialabs-community/xld-nginx-plus-plugin/total.svg
 
