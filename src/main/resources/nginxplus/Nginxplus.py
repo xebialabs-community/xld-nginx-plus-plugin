@@ -33,12 +33,12 @@ class NginxPlusClient(object):
             raise Exception("Failed to get upstream conf from [%s] for [%s] using api [%s]" % (upstream_name, self.url, api_version))
         else:
             data = json.loads(response.data.decode('utf-8'))
-            id = "-1"
+            server_id = "-1"
             for server in data:
                 if server["server"] == server_name:
-                    id = str(server["id"])
-                    print "Found server "+server_name+", id = "+id
-            if id == "-1":
+                    server_id = str(server["id"])
+                    print "Found server "+server_name+", id = "+ server_id
+            if server_id == "-1":
                 raise Exception("Did not find servername [%s] in upstream conf from [%s] for [%s] using api [%s]" % (server_name, upstream_name, self.url, api_version))
             else:
-                return id
+                return server_id
