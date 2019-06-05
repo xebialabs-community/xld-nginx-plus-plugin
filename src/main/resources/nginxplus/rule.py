@@ -14,14 +14,9 @@ def emptyOrNone(s):
 
 
 def extract_nginx_aware_containers(deltas):
-    nothing_to_do = True
-    for delta in deltas.deltas:
-        if str(delta.operation) != "NOOP":
-            nothing_to_do = False
-            break
+    nothing_to_do = determine_if_noop(deltas)
     if nothing_to_do:
         return []
-
     containers = {}
     for delta in deltas.deltas:
         delta_op = str(delta.operation)
@@ -33,6 +28,14 @@ def extract_nginx_aware_containers(deltas):
                 continue
             containers[container.name] = container
     return [containers[ke] for ke in containers.keys()]
+
+def determine_if_noop(deltas):
+    nothing_to_do = True
+    for delta in deltas.deltas:
+        if str(delta.operation) != "NOOP":
+            nothing_to_do = False
+            break
+    return nothing_to_do
 
 
 def generate_steps(containers, context):

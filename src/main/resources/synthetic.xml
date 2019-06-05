@@ -14,15 +14,15 @@
            xsi:schemaLocation="http://www.xebialabs.com/deployit/synthetic synthetic.xsd" xmlns="http://www.xebialabs.com/deployit/synthetic">
 
     <!-- Nginx Configuration -->
-    <type type="nginx.Server" extends="udm.BaseContainer" root="INFRASTRUCTURE">
-        <property name="url" label="Nginx API URL" required="true" description="Nginx API URL."/>
+    <type type="nginxPlus.Server" extends="udm.BaseContainer" root="INFRASTRUCTURE">
+        <property name="url" label="Nginx Plus API URL" required="true" description="Nginx Plus API URL."/>
     </type>
 
     <type-modification type="udm.BaseContainer">
-        <property name="serverName" required="false" category="Nginx config" description="Server as configured in the nginx configuration."/>
-        <property name="upstreamName" required="false" category="Nginx config" description="Selects a group to work with."/>
-        <property name="apiVersion" required="false" category="Nginx config" default="4" description="Nginx API Version - default is 4"/>
-        <property name="nginxServer" required="false" kind="ci" referenced-type="nginx.Server" category="Nginx config" description="Nginx Server this CI is part of."/>
+        <property name="serverName" required="false" category="Nginx Plus Upstream Group Member Config" description="The IP address and port Nginx Plus uses to identify this server."/>
+        <property name="upstreamName" required="false" category="Nginx Plus Upstream Group Member Config" description="Upstream group this server is associated with within Nginx Plus."/>
+        <property name="apiVersion" required="false" category="Nginx Plus Upstream Group Member Config" default="4" description="Nginx Plus API Version - default is 4"/>
+        <property name="nginxServer" required="false" kind="ci" referenced-type="nginxPlus.Server" category="Nginx Plus Upstream Group Member Config" description="Nginx Plus Server that manages the upstream group."/>
     </type-modification>
 
 </synthetic>
