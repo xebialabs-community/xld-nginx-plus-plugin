@@ -40,20 +40,20 @@ def determine_if_noop(deltas):
 
 def generate_steps(containers, context):
     for container in containers:
-        server_name = container.serverName
-        upstream_name = container.upstreamName
-        api_version = container.apiVersion
-        vn = container.nginxServer
-        sick_step = steps.jython(description="Mark [%s] as down in Nginx [%s], api version is [%s]" % (server_name, vn.name, api_version), order=5,
-                                 script="nginxplus/down-server.py",
-                                 jython_context={"server_name": server_name, "upstream_name": upstream_name, "api_version": api_version,
-                                                 "nginx_url": vn.url})
-        health_step = steps.jython(description="Mark [%s] as up in Nginx [%s], api version is [%s]" % (server_name, vn.name, api_version), order=95,
-                                   script="nginxplus/up-server.py",
-                                   jython_context={"server_name": server_name, "upstream_name": upstream_name, "api_version": api_version,
-                                                   "nginx_url": vn.url})
+        sick_step = step(container, "down")
+        health_step = step(container, "up")
         context.addStep(sick_step)
         context.addStep(health_step)
+
+def step(container, type):
+    server_name = container.serverName
+    upstream_name = container.upstreamName
+    api_version = container.apiVersion
+    vn = container.nginxServer
+    return steps.jython(description="Mark [%s] as %s in Nginx [%s], api version is [%s]" % (server_name, type, vn.name, api_version), order=5,
+                                 script="nginxplus/%s-server.py" % (type),
+                                 jython_context={"server_name": server_name, "upstream_name": upstream_name, "api_version": api_version,
+                                                 "nginx_url": vn.url})
 
 
 generate_steps(extract_nginx_aware_containers(deltas), context)

@@ -17,21 +17,21 @@ See the [XL Deploy reference manual](https://docs.xebialabs.com/xl-deploy) for b
 This plugin adds the Nginx Plus Server type to XL Deploy and makes it possible to designate other servers as being part of a an Nginx Plus Upstream Group.
 During the execution of a deployment to servers associated with an XL Deploy environment, the plugin will add the following steps to the deployment process:
 
- 1. The Nginx Plus server is queried to retrieve the Nginx Plus IDs of all environment containers (servers) that are also members of the Nginx upstream group.
- 2. For each environment container (server) that is also a member of the upstream group, the plugin updates the Nginx Plus upstream member server's 'down' attribute to 'true'. Nginx Plus will stop directing traffic to these servers.
- 3. After all servers have been marked as 'down', deployment takes place.
- 4. When deployment is complete, all servers previously marked down will be marked up by setting their 'down' attribute to 'false'.
+1.  The Nginx Plus server is queried to retrieve the Nginx Plus IDs of all environment containers (servers) that are also members of the Nginx upstream group.
+2.  For each environment container (server) that is also a member of the upstream group, the plugin updates the Nginx Plus upstream member server's 'down' attribute to 'true'. Nginx Plus will stop directing traffic to these servers.
+3.  After all servers have been marked as 'down', deployment takes place.
+4.  When deployment is complete, all servers previously marked down will be marked up by setting their 'down' attribute to 'false'.
 
 Members of an Nginx Plus upstream group can be divided into a Blue environment and a Green environment within XL Deploy. XL Deploy can then deploy to one environment at a time while Nginx Plus ensures that end user traffic is never directed to a server that is in the process of being updated. 
 
-* **Requirements**
-   * **XL Release** 8.6.1+
-   * **Nginx Plus that supports Nginx Plus API** v4
+*   **Requirements**
+*   **XL Release** 8.6.1+
+*   **Nginx Plus that supports Nginx Plus API** v4
 
 ## Installation
 
-  * Copy the latest JAR file from the [releases page](https://github.com/xebialabs-community/xld-nginx-plus-plugin/releases) into the `XL_DEPLOY_SERVER/plugins` directory.
-  * Restart the XL Deploy server.
+*  Copy the latest JAR file from the [releases page](https://github.com/xebialabs-community/xld-nginx-plus-plugin/releases) into the `XL_DEPLOY_SERVER/plugins` directory.
+*  Restart the XL Deploy server.
 
 ## Usage
 
