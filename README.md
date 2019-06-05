@@ -30,8 +30,8 @@ Members of an Nginx Plus upstream group can be divided into a Blue environment a
 
 ## Installation
 
-*  Copy the latest JAR file from the [releases page](https://github.com/xebialabs-community/xld-nginx-plus-plugin/releases) into the `XL_DEPLOY_SERVER/plugins` directory.
-*  Restart the XL Deploy server.
+*   Copy the latest JAR file from the [releases page](https://github.com/xebialabs-community/xld-nginx-plus-plugin/releases) into the `XL_DEPLOY_SERVER/plugins` directory.
+*   Restart the XL Deploy server.
 
 ## Usage
 
