@@ -44,16 +44,15 @@ def generate_steps(containers, context):
         upstream_name = container.upstreamName
         api_version = container.apiVersion
         vn = container.nginxServer
-        sick_step = steps.jython(description="Mark test [%s] as down in Nginx [%s], api version is [%s]" % (server_name, vn.name, api_version), order=5,
+        sick_step = steps.jython(description="Mark [%s] as down in Nginx [%s], api version is [%s]" % (server_name, vn.name, api_version), order=5,
                                  script="nginxplus/down-server.py",
                                  jython_context={"server_name": server_name, "upstream_name": upstream_name, "api_version": api_version,
                                                  "nginx_url": vn.url})
-        health_step = steps.jython(description="Mark test [%s] as up in Nginx [%s], api version is [%s]" % (server_name, vn.name, api_version), order=95,
+        health_step = steps.jython(description="Mark [%s] as up in Nginx [%s], api version is [%s]" % (server_name, vn.name, api_version), order=95,
                                    script="nginxplus/up-server.py",
                                    jython_context={"server_name": server_name, "upstream_name": upstream_name, "api_version": api_version,
                                                    "nginx_url": vn.url})
         context.addStep(sick_step)
         context.addStep(health_step)
-
 
 generate_steps(extract_nginx_aware_containers(deltas), context)

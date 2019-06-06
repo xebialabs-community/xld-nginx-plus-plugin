@@ -2,7 +2,6 @@
 
 [![Build Status][xld-nginx-plus-plugin-travis-image]][xld-nginx-plus-plugin-travis-url]
 [![Codacy Badge][xld-nginx-plus-plugin-codacy-image]][xld-nginx-plus-plugin-codacy-url]
-[![Codeclimate Badge][xld-nginx-plus-plugin-codeclimate-image]][xld-nginx-plus-plugin-codeclimate-url]
 [![License: MIT][xld-nginx-plus-plugin-license-image]][xld-nginx-plus-plugin-license-url]
 ![Github All Releases][xld-nginx-plus-plugin-downloads-image]
 
@@ -45,7 +44,7 @@ Note: This is the Nginx Plus Server and not a member of the Nginx Plus Upstream 
 
 ![NginxPlusServerConfiguration](images/configureNginxPlusServer.jpg)
 
-### Configure servers that are members of an Nginx Plus upstream group
+### Create and Configure the Servers that are Members of an Nginx Plus Upstream Group
 
 ![UpstreamMemberConfig](images/configureMemberServers.jpg)
 
@@ -89,8 +88,6 @@ Example of a successful deployment, showing steps:
 [xld-nginx-plus-plugin-travis-url]: https://travis-ci.org/xebialabs-community/xld-nginx-plus-plugin
 [xld-nginx-plus-plugin-codacy-image]: https://api.codacy.com/project/badge/Grade/9fc1287ae6e64835ab2ea1696a9064c3
 [xld-nginx-plus-plugin-codacy-url]: https://www.codacy.com/app/ladamato/xld-nginx-plus-plugin?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=xebialabs-community/xld-nginx-plus-plugin&amp;utm_campaign=Badge_Grade
-[xld-nginx-plus-plugin-codeclimate-image]: https://api.codeclimate.com/v1/badges/2a6a489b550a2f6daa8a/maintainability
-[xld-nginx-plus-plugin-codeclimate-url]: https://codeclimate.com/github/xebialabs-community/xld-nginx-plus-plugin/maintainability
 [xld-nginx-plus-plugin-license-image]: https://img.shields.io/badge/License-MIT-yellow.svg
 [xld-nginx-plus-plugin-license-url]: https://opensource.org/licenses/MIT
 [xld-nginx-plus-plugin-downloads-image]: https://img.shields.io/github/downloads/xebialabs-community/xld-nginx-plus-plugin/total.svg
